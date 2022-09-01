@@ -1,1 +1,10 @@
-# Jenkins-Starter
+# Jenkins Starter
+
+
+```bash
+# required
+$ ssh
+$ sshpass
+$ ssh-keygen
+
+```
