@@ -6,5 +6,6 @@
 $ ssh
 $ sshpass
 $ ssh-keygen
+$ Dockerfile
 
 ```

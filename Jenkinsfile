@@ -2,7 +2,8 @@ pipeline {
     agent any
 
     environment {
-      gitlab_endpoint = 'git@gitlab.com:dude-indeed/cm-his/nodehis/backend/nodehis-auth-service-api.git#dev'
+      // example https://github.com/beatXD/world-country#main 
+      gitlab_endpoint = ''
 
       image_name = 'image_name'
       service_name = 'service_name'
