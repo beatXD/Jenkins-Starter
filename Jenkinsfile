@@ -12,6 +12,9 @@ pipeline {
 
       shell_address = 'shell_address'
       shell_password = 'shell_password'
+
+      docker_username = 'docker_username'
+      docker_password = 'docker_password'
     }
 
     stages {
@@ -23,6 +26,7 @@ pipeline {
 
         stage('Pushing...') {
             steps {
+                sh 'docker login -u docker_username -p docker_password'
                 sh 'docker push $image_name'
             }
         }
@@ -36,6 +40,7 @@ pipeline {
 
         stage('Deploy Pulling...') {
             steps {
+                sh 'sshpass -p $shell_password ssh $shell_address docker login -u docker_username -p docker_password'
                 sh 'sshpass -p $shell_password ssh $shell_address docker pull $image_name'
             }
         }
