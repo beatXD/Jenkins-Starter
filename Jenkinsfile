@@ -43,7 +43,7 @@ pipeline {
 
         stage('Deploy Updating...') {
             steps {
-                sh 'sshpass -p $shell_password ssh $shell_address docker run -d --restart=always --name $service_name -p:$port $image_name'
+                sh 'sshpass -p $shell_password ssh $shell_address docker run -it -d --restart=always --name $service_name -p:$port $image_name'
             }
         }
 
